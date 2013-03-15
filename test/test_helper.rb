@@ -1,3 +1,3 @@
-require 'core_ext/Array'
-require 'core_ext/Integer'
-require 'core_ext/String'
+require 'core_ext/array'
+require 'core_ext/integer'
+require 'core_ext/string'
