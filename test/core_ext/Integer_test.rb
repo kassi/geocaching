@@ -38,5 +38,16 @@ module CoreExt
         end
       end
     end
+
+    class IteratedCrossfootTest < Test::Unit::TestCase
+
+      test 'should calculate iterated crossfoot of 1 digit number' do
+        assert_equal 5, 5.iterated_crossfoot
+      end
+
+      test 'should iterate on 2 digit crossfoot' do
+        assert_equal 4, 94.iterated_crossfoot
+      end
+    end
   end
 end

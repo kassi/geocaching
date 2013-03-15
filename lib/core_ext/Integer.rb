@@ -14,4 +14,10 @@ class Integer
     end
     result
   end
+
+  def iterated_crossfoot
+    result = self
+    result = result.crossfoot while result.digits > 1
+    result
+  end
 end
