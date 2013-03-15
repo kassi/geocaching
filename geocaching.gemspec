@@ -8,9 +8,9 @@ Gem::Specification.new do |gem|
   gem.version       = Geocaching::VERSION
   gem.authors       = ["Karsten Silkenbäumer"]
   gem.email         = ["ksi@kluks.de"]
-  gem.description   = %q{TODO: Write a gem description}
-  gem.summary       = %q{TODO: Write a gem summary}
-  gem.homepage      = ""
+  gem.description   = %q{This gem provides a toolset of functions and methods which aids in doing calculation needed for geocaching.}
+  gem.summary       = %q{This gem provides a toolset of functions and methods which aids in doing calculation needed for geocaching.}
+  gem.homepage      = "https://github.com/kassi/geocaching"
 
   gem.files         = `git ls-files`.split($/)
   gem.executables   = gem.files.grep(%r{^bin/}).map{ |f| File.basename(f) }
