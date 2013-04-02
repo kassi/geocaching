@@ -71,6 +71,56 @@ module CoreExt
         assert_equal "YZABC", "ABCDE".caesar(-2)
       end
     end
+
+    class CrossfootTest < Test::Unit::TestCase
+
+      test 'should calculate crossfoot of 1 digit number' do
+        assert_equal 5, "5".crossfoot
+      end
+
+      test 'should calculate crossfoot of 2 digit number' do
+        assert_equal 6, "15".crossfoot
+      end
+
+      test 'should calculate 2 digit crossfoot' do
+        assert_equal 13, "94".crossfoot
+      end
+
+      test 'should calculate float crossfoot' do
+        assert_equal 24, "94.344".crossfoot
+      end
+
+      test 'should calculate negative float crossfoot' do
+        assert_equal 24, "-94.344".crossfoot
+      end
+
+      test 'should calculate crossfoot of coords' do
+        assert_equal 59, "N 53 12.345 E 010 56.789".crossfoot
+      end
+    end
+
+    class IteratedCrossfootTest < Test::Unit::TestCase
+
+      test 'should calculate iterated crossfoot of 1 digit number' do
+        assert_equal 5, "5".iterated_crossfoot
+      end
+
+      test 'should iterate on 2 digit crossfoot' do
+        assert_equal 4, "94".iterated_crossfoot
+      end
+
+      test 'should iterate on float crossfoot' do
+        assert_equal 6, "94.344".iterated_crossfoot
+      end
+
+      test 'should iterate on negative float crossfoot' do
+        assert_equal 6, "-94.344".iterated_crossfoot
+      end
+
+      test 'should iterate on coords crossfoot' do
+        assert_equal 5, "N 53 12.345 E 010 56.789".iterated_crossfoot
+      end
+    end
   end
 end
 

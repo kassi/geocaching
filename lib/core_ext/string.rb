@@ -19,6 +19,20 @@ class String
     result
   end
 
+  def crossfoot
+    result = 0
+    self.chars.each do |char|
+      result += char.to_i
+    end
+    result
+  end
+
+  def iterated_crossfoot
+    result = self.crossfoot
+    result = result.crossfoot while result.digits > 1
+    result
+  end
+
   def caesar(rot=3)
     result = ""
     self.chars.each do |char|
