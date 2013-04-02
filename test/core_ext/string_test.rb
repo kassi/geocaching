@@ -3,6 +3,33 @@ require 'test_helper'
 module CoreExt
   module String
 
+    class LetterCodeTest < Test::Unit::TestCase
+
+      test 'should return 1 for A' do
+        assert_equal 1, "A".lettercode
+      end
+
+      test 'should return 2 for B' do
+        assert_equal 2, "B".lettercode
+      end
+
+      test 'should return 3 for C' do
+        assert_equal 3, "C".lettercode
+      end
+
+      test 'should return 26 for Z' do
+        assert_equal 26, "Z".lettercode
+      end
+
+      test 'should return 26 for z' do
+        assert_equal 26, "z".lettercode
+      end
+
+      test 'should return 0 for any non letter' do
+        assert_equal 0, "3".lettercode
+      end
+    end
+
     class ToA1B2Test < Test::Unit::TestCase
 
       test 'should convert text to array of letter codes' do

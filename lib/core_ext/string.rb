@@ -1,5 +1,11 @@
 class String
 
+  def lettercode
+    char = self.chars.first.upcase
+    code = char.ord-64
+    code.between?(1, 26) ? code : 0
+  end
+
   def to_a1b2
     result = []
     self.chars.each do |char|
