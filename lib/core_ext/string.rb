@@ -1,4 +1,19 @@
+# encoding: utf-8
+require "unicode_utils"
+
 class String
+
+  def letters
+    self.chars.select { |c| c =~ /\p{Word}/i && c !~ /[\d_]/ }
+  end
+
+  def upcased_letters
+    self.chars.select { |c| c =~ /\p{Word}/i && c !~ /[\d_]/ && UnicodeUtils.upcase(c) == c }
+  end
+
+  def downcased_letters
+    self.chars.select { |c| c =~ /\p{Word}/i && c !~ /[\d_]/ && UnicodeUtils.downcase(c) == c }
+  end
 
   def lettercode
     char = self.chars.first.upcase

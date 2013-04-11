@@ -1,7 +1,29 @@
+# encoding: utf-8
 require 'test_helper'
 
 module CoreExt
   module String
+
+    class LettersTest < Test::Unit::TestCase
+      test 'should return exactly the letters of a string' do
+        assert_equal %w(H a l l o I m t h e t e s t s t r i n g a n d I c o n t a i n n u m b e r t h e u m l a u t s ä ö ü Ä Ö Ü a n d ç É é ñ a n d ß a n d s o m e s i g n s),
+          "Hallo!\nI'm the test-string and I contain 1 number, the umlauts äöüÄÖÜ and çÉéñ and ß and some signs: (%&$_)".letters
+      end
+    end
+
+    class UpcaseLettersTest < Test::Unit::TestCase
+      test 'should return exactly the upper cased letters of a string' do
+        assert_equal %w(H I I Ä Ö Ü É),
+          "Hallo!\nI'm the test-string and I contain 1 number, the umlauts äöüÄÖÜ and çÉéñ and ß and some signs: (%&$_)".upcased_letters
+      end
+    end
+
+    class LettersTest < Test::Unit::TestCase
+      test 'should return exactly the lower cased letters of a string' do
+        assert_equal %w(a l l o m t h e t e s t s t r i n g a n d c o n t a i n n u m b e r t h e u m l a u t s ä ö ü a n d ç é ñ a n d ß a n d s o m e s i g n s),
+          "Hallo!\nI'm the test-string and I contain 1 number, the umlauts äöüÄÖÜ and çÉéñ and ß and some signs: (%&$_)".downcased_letters
+      end
+    end
 
     class LetterCodeTest < Test::Unit::TestCase
 
