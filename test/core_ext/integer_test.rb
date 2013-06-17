@@ -49,5 +49,16 @@ module CoreExt
         assert_equal 4, 94.iterated_crossfoot
       end
     end
+
+    class To1A2BTest < Test::Unit::TestCase
+      test 'should convert integer to letter' do
+        assert_equal "A", 1.to_1a2b
+        assert_equal "Z", 26.to_1a2b
+      end
+
+      test 'should convert integers out of range to space' do
+        assert_equal " ", 27.to_1a2b
+      end
+    end
   end
 end

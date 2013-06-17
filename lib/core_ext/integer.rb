@@ -5,6 +5,14 @@ class Integer
     self.to_s.length
   end
 
+  def to_1a2b
+    if self >= 1 and self <= 26
+      ("A".ord-1+self).chr
+    else
+      " "
+    end
+  end
+
   def crossfoot
     raise NegativeIntegerError if self < 0
 
