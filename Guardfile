@@ -15,4 +15,4 @@ end
 
 logger :level       => :warn
 
-notification :growl
+notification :terminal_notifier_guard
