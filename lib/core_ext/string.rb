@@ -37,7 +37,7 @@ class String
   def crossfoot
     result = 0
     self.chars.each do |char|
-      result += char.to_i
+      result += char.to_i > 0 ? char.to_i : char.lettercode
     end
     result
   end
