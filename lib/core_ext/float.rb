@@ -9,7 +9,7 @@ class Float
 
   def iterated_crossfoot
     result = self.crossfoot
-    result = result.crossfoot while result.digits > 1
+    result = result.crossfoot while result.length > 1
     result
   end
 end

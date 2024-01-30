@@ -1,7 +1,7 @@
 class Integer
   class NegativeIntegerError < StandardError; end
 
-  def digits
+  def length
     self.to_s.length
   end
 
@@ -22,10 +22,14 @@ class Integer
     end
     result
   end
+  alias_method :cf, :crossfoot
+  alias_method :qs, :crossfoot
 
   def iterated_crossfoot
     result = self
-    result = result.crossfoot while result.digits > 1
+    result = result.crossfoot while result.length > 1
     result
   end
+  alias_method :icf, :iterated_crossfoot
+  alias_method :iqs, :iterated_crossfoot
 end

@@ -17,13 +17,13 @@ Gem::Specification.new do |spec|
   spec.test_files    = spec.files.grep(%r{^(test|spec|features)/})
   spec.require_paths = ["lib"]
 
-  spec.add_development_dependency "bundler", "~> 1.5"
+  spec.add_development_dependency "bundler"
   spec.add_development_dependency "rake"
   spec.add_development_dependency "guard"
   spec.add_development_dependency "guard-test"
+  spec.add_development_dependency "minitest"
   spec.add_development_dependency "terminal-notifier-guard"
-  spec.add_development_dependency "test-unit"
   spec.add_development_dependency "rb-fsevent"
 
-  spec.add_dependency "unicode_utils"
+  # spec.add_dependency "unicode_utils"
 end

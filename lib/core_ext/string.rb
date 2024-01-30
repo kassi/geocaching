@@ -1,5 +1,5 @@
 # encoding: utf-8
-require "unicode_utils"
+# require "unicode_utils"
 
 class String
 
@@ -8,11 +8,15 @@ class String
   end
 
   def upcased_letters
-    self.chars.select { |c| c =~ /\p{Word}/i && c !~ /[\d_]/ && UnicodeUtils.upcase(c) == c }
+    self.chars.select { |c| c =~ /\p{Word}/i && c !~ /[\d_]/ && c.upcase == c }
   end
 
   def downcased_letters
-    self.chars.select { |c| c =~ /\p{Word}/i && c !~ /[\d_]/ && UnicodeUtils.downcase(c) == c }
+    self.chars.select { |c| c =~ /\p{Word}/i && c !~ /[\d_]/ && c.downcase == c }
+  end
+
+  def digits
+    self.chars.select { |c| c =~ /\p{Digit}/ }
   end
 
   def lettercode
@@ -44,7 +48,7 @@ class String
 
   def iterated_crossfoot
     result = self.crossfoot
-    result = result.crossfoot while result.digits > 1
+    result = result.crossfoot while result.length > 1
     result
   end
 
@@ -61,5 +65,13 @@ class String
       end
     end
     result
+  end
+
+  def bww
+    self.to_a1b2.sum
+  end
+
+  def bw(n)
+    self[n-1].to_a1b2[0]
   end
 end

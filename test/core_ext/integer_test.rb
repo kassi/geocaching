@@ -1,62 +1,62 @@
+require 'minitest/autorun'
 require 'test_helper'
 
-module CoreExt
-  module Integer
+module CoreExtTests
+  module IntegerTests
+    class LengthTest < Minitest::Test
 
-    class DigitsTest < Test::Unit::TestCase
-
-      test 'should calculate length of 1 digit number' do
-        assert_equal 1, 1.digits
+      def test_should_calculate_length_of_1_digit_number
+        assert_equal 1, 1.length
       end
 
-      test 'should calculate length of 2 digit number' do
-        assert_equal 2, 10.digits
+      def test_should_calculate_length_of_2_digit_number
+        assert_equal 2, 10.length
       end
 
-      test 'should calculate length of negative number' do
-        assert_equal 3, -10.digits
+      def test_should_calculate_length_of_negative_number
+        assert_equal 3, -10.length
       end
     end
 
-    class CrossfootTest < Test::Unit::TestCase
+    class CrossfootTest < Minitest::Test
 
-      test 'should calculate crossfoot of 1 digit number' do
+      def test_should_calculate_crossfoot_of_1_digit_number
         assert_equal 5, 5.crossfoot
       end
 
-      test 'should calculate crossfoot of 2 digit number' do
+      def test_should_calculate_crossfoot_of_2_digit_number
         assert_equal 6, 15.crossfoot
       end
 
-      test 'should calculate 2 digit crossfoot' do
+      def test_should_calculate_2_digit_crossfoot
         assert_equal 13, 94.crossfoot
       end
 
-      test 'should raise Exception if number is negative' do
-        assert_raise ::Integer::NegativeIntegerError do
+      def test_should_raise_Exception_if_number_is_negative
+        assert_raises ::Integer::NegativeIntegerError do
           -1.crossfoot
         end
       end
     end
 
-    class IteratedCrossfootTest < Test::Unit::TestCase
+    class IteratedCrossfootTest < Minitest::Test
 
-      test 'should calculate iterated crossfoot of 1 digit number' do
+      def test_should_calculate_iterated_crossfoot_of_1_digit_number
         assert_equal 5, 5.iterated_crossfoot
       end
 
-      test 'should iterate on 2 digit crossfoot' do
+      def test_should_iterate_on_2_digit_crossfoot
         assert_equal 4, 94.iterated_crossfoot
       end
     end
 
-    class To1A2BTest < Test::Unit::TestCase
-      test 'should convert integer to letter' do
+    class To1A2BTest < Minitest::Test
+      def test_should_convert_integer_to_letter
         assert_equal "A", 1.to_1a2b
         assert_equal "Z", 26.to_1a2b
       end
 
-      test 'should convert integers out of range to space' do
+      def test_should_convert_integers_out_of_range_to_space
         assert_equal " ", 27.to_1a2b
       end
     end
